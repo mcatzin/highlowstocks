@@ -1,70 +1,109 @@
-# Getting Started with Create React App
+# Stocks
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of contents
 
-## Available Scripts
+- [General info](#general-info)
+- [Technologies](#technologies)
+- [Setup](#setup)
+- [General Steps](#generalsteps)
 
-In the project directory, you can run:
+## General info
 
-### `npm start`
+This project is a simple data visualization of live Stocks and Forex website using Highcharts library in React.js with Redux.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Learning Outcomes
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Learn how to implement Highcharts library with React.js.
+- Learn to visualize live Stocks and Forex data using HighStocks charts
 
-### `npm test`
+## Tech/Libraries
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Project is created with:
 
-### `npm run build`
+- React.js
+- Redux
+- Bootstrap
+- Highcharts library
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Setup
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+To run this project, install it locally using npm:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+$ cd ../
+$ npm install
+$ npm start
+```
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Installation and starter boilerplate
+   1. install all devDependencies and dependencies
+   2. create webpack config files
+   3. create .babelrc file
+   4. create index.html
+   5. create vendor.json file
+   6. crate src/main.js
+   7. create App.js file
+   8. create MainLayout.js file
+   9. create HighCharts.js file
+   10. create DashboardHome.js file
+2. APIs
+   1. register for free Alpha Vantage API key
+3. install HighCharts
+   1. npm install --save highcharts highcharts-react-official
+   2. add import 'highcharts' to vendor.js file
+   3. add import 'highcharts-react-official' to vendor.js file
+4. Actions
+   1. create the action types
+   2. create getDailyStocksTimeSeries action
+   3. creat getWeeklyStocksTimeSeries action
+   4. create getMonthlyStocksTimeSeries action
+   5. create getMonthlyStocksForComparison action
+5. Reducer
+   1. create a reducer folder and stock-reducers.js file
+   2. create STOCK_TIME_SERIES_DAILY, STOCK_TIME_SERIES_WEEKLY, STOCK_TIME_SERIES_MONTHLY MULTIPLE_STOCKS_SERIES_MONTHLY reducers
+   3. create reducers.js file
+6. Store
+   1. create store folder
+   2. create highcharts-store.js file
+7. Connect Redux store to React
+   1. import Provider
+   2. import HighChartsSeries from './store/highcharts-store'
+8. Daily stocks component
+   1. create stock folder
+   2. create DailyStocks component
+   3. create Lazy Loading DailyStocks
+   4. add DailyStocks Route
+9. Weekly Stocks Component
+   1. create WeeklyStocks Component
+   2. create Lazy Loading WeeklyStocks
+   3. add WeeklyStocks Route
+10. Monthly Stocks Component
+    1. create MonthlyStocks Component
+    2. create Lazy Loading MonthlyStocks
+    3. add MonthlyStocks Route
+11. Monthly stocks Comparison Component
+    1. create MonthlyStocksComparison
+    2. create Lazy loading MonthlyStocksComparison
+    3. add MonthlyStocksComparison Route
+12. Forex actions
+    1. create forex action types
+    2. create action methods
+13. Forex Reducer
+    1. create forex reducer
+14. Create Daily Forex Component
+    1. create daily forex component
+    2. connect the redux store
+    3. create Lazy loading DailyForex
+    4. add DailyForex Route
+15. Create Weekly Forex Component
+    1. create weekly forex component
+    2. create Lazy loading WeeklyForex
+    3. add WeeklyForex Route
+16. Create monthly Forex Component
+    1. create monthly forex component
+    2. create Lazy loading MonthlyForex
+    3. add MonthlyForex Route
+17. Create Monthly Forex Comparison Component
+    1. create monthly forex component
+    2. create Lazy loading MonthlyForex
+    3. add MonthlyForex Route
